@@ -1,0 +1,35 @@
+{
+  "company": {
+    "name": "Prayan Innovation",
+    "tradeMark": "4444549",
+    "tagline": "Simplifying Science | Empowering Education | Engineering Innovation",
+    "established": 2014,
+    "contact": {
+      "phone": "+91-900-800-9944",
+      "email": "contact@prayaninnovation.com",
+      "address": "89, New Sanganer Road, Kusal Nagar, Dada Gurudev Nagar, Sanganer, Jaipur, Rajasthan 302029"
+    }
+  },
+  "categories": [
+    {
+      "id": "atmosphere-control-glove-boxes",
+      "title": "Atmosphere Control Glove Boxes",
+      "description": "Hermetically sealed, inert-environment chambers engineered for precise chemical synthesis and lithium-ion battery research."
+    },
+    {
+      "id": "interactive-stem-hubs",
+      "title": "Interactive STEM Innovation Hubs",
+      "description": "Turnkey, IAPT-aligned science laboratories designed to bridge theoretical physics with hands-on university education."
+    },
+    {
+      "id": "special-purpose-machines",
+      "title": "Special Purpose Machines (SPM)",
+      "description": "Application-specific mechanical and automated systems designed from scratch for complex industrial testing challenges."
+    },
+    {
+      "id": "desiccator-ptfe-chambers",
+      "title": "Desiccator & PTFE Chambers",
+      "description": "High-vacuum storage and extreme-temperature corrosion-proof autoclaves built to exact volume specifications."
+    }
+  ]
+}
