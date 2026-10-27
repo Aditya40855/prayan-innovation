@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
-import Link from "next/link"; // <-- Added this import
+import Link from "next/link";
 import "./globals.css";
 import content from "@/data/content.json";
 
@@ -24,7 +24,6 @@ export default function RootLayout({
         <div className="fixed top-0 left-0 right-0 z-50 px-4 sm:px-6 lg:px-8 pt-6 pointer-events-none">
           <header className="max-w-7xl mx-auto bg-[#FCFBF8]/85 backdrop-blur-xl border border-slate-200/60 shadow-[0_8px_30px_rgb(0,0,0,0.06)] rounded-full px-6 py-3 flex items-center justify-between pointer-events-auto transition-all duration-300">
             
-            {/* Replaced <a> with <Link> */}
             <Link href="/" className="flex items-center gap-3 group">
               <div className="w-10 h-10 rounded-full bg-gradient-to-tr from-blue-600 to-indigo-500 flex items-center justify-center shadow-md shadow-blue-500/20 group-hover:scale-105 transition-transform">
                  <span className="text-white font-bold text-xs">PI</span>
@@ -36,9 +35,8 @@ export default function RootLayout({
             </Link>
 
             <nav className="hidden lg:flex items-center space-x-8 text-sm font-semibold text-slate-600">
-              {/* Replaced <a> with <Link> */}
-              <Link href="/turnkey-labs" className="text-blue-600 font-bold hover:text-blue-700 transition-colors">Turnkey Labs</Link>
-              <Link href="/maintenance" className="text-emerald-600 font-bold hover:text-emerald-700 transition-colors">Maintenance (AMC)</Link>
+              {/* Innovation Lab moved to the front, Turnkey Labs & Maintenance removed */}
+              <Link href="/innovation-lab" className="text-blue-600 font-bold hover:text-blue-700 transition-colors">Innovation Lab</Link>
               <Link href="/#solutions" className="hover:text-blue-600 transition-colors">Products</Link>
               <Link href="/#expertise" className="hover:text-blue-600 transition-colors">Expertise</Link>
               <Link href="/#gallery" className="hover:text-blue-600 transition-colors">Facility</Link>
@@ -81,7 +79,7 @@ export default function RootLayout({
                 <h4 className="text-white font-bold mb-6">Equipment</h4>
                 <ul className="space-y-3 text-sm text-slate-400">
                   <li><Link href="/#solutions" className="hover:text-blue-400 transition-colors">Acrylic Glove Boxes</Link></li>
-                  <li><Link href="/#solutions" className="hover:text-blue-400 transition-colors">STEM Innovation Hubs</Link></li>
+                  <li><Link href="/innovation-lab" className="hover:text-blue-400 transition-colors">STEM Innovation Hubs</Link></li>
                   <li><Link href="/#solutions" className="hover:text-blue-400 transition-colors">Special Purpose Machines</Link></li>
                   <li><Link href="/#solutions" className="hover:text-blue-400 transition-colors">Desiccator Chambers</Link></li>
                 </ul>

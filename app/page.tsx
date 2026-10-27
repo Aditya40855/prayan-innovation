@@ -34,12 +34,66 @@ export default function Home() {
 
   return (
     <div className="bg-[#FCFBF8]">      
-      
+      {/* Inline styles for custom 3D floating animation */}
+      <style dangerouslySetInnerHTML={{
+        __html: `
+          @keyframes float-slow {
+            0%, 100% { transform: translateY(0) rotate(0deg); }
+            50% { transform: translateY(-20px) rotate(2deg); }
+          }
+          @keyframes float-medium {
+            0%, 100% { transform: translateY(0) rotate(0deg); }
+            50% { transform: translateY(-15px) rotate(-2deg); }
+          }
+          .animate-float-slow { animation: float-slow 6s ease-in-out infinite; }
+          .animate-float-medium { animation: float-medium 5s ease-in-out infinite; }
+        `
+      }} />
+
       {/* --- 1. DEEP HERO SECTION --- */}
       <section className="relative min-h-[95vh] flex items-center justify-center overflow-hidden bg-slate-950 pt-20">
         <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-20 mix-blend-overlay"></div>
         <div className="absolute top-[-20%] left-1/2 -translate-x-1/2 w-[120%] h-[800px] bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-blue-600/20 via-slate-950/80 to-slate-950 pointer-events-none" />
         <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-[#FCFBF8] to-transparent z-10" />
+        
+        {/* Animated 3D Floating Bubbles (Hidden on small mobile for clean text layout, visible md+) */}
+        <div className="hidden md:block absolute inset-0 z-10 overflow-hidden pointer-events-none">
+          {/* Bubble 1: SPM */}
+          <div className="absolute top-[20%] left-[10%] animate-float-slow pointer-events-auto" style={{ animationDelay: '0s' }}>
+            <div className="w-28 h-28 lg:w-36 lg:h-36 rounded-full border border-white/20 bg-slate-900/50 backdrop-blur-md shadow-[0_0_30px_rgba(59,130,246,0.3)] overflow-hidden flex items-center justify-center relative group hover:scale-110 hover:border-blue-400/50 hover:shadow-[0_0_50px_rgba(59,130,246,0.6)] transition-all duration-500 cursor-pointer">
+              <img src="https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=400&q=80" alt="SPM" className="absolute inset-0 w-full h-full object-cover opacity-40 group-hover:opacity-70 transition-opacity duration-500 mix-blend-luminosity group-hover:mix-blend-normal" />
+              <div className="absolute inset-0 bg-gradient-to-t from-slate-900 to-transparent opacity-80" />
+              <span className="relative z-10 font-bold text-white text-sm lg:text-base text-center tracking-wide">SPM</span>
+            </div>
+          </div>
+
+          {/* Bubble 2: Prototyping */}
+          <div className="absolute bottom-[25%] left-[15%] animate-float-medium pointer-events-auto" style={{ animationDelay: '1.5s' }}>
+            <div className="w-24 h-24 lg:w-32 lg:h-32 rounded-full border border-white/20 bg-slate-900/50 backdrop-blur-md shadow-[0_0_30px_rgba(16,185,129,0.2)] overflow-hidden flex items-center justify-center relative group hover:scale-110 hover:border-emerald-400/50 hover:shadow-[0_0_50px_rgba(16,185,129,0.5)] transition-all duration-500 cursor-pointer">
+              <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=400&q=80" alt="Prototyping" className="absolute inset-0 w-full h-full object-cover opacity-40 group-hover:opacity-70 transition-opacity duration-500 mix-blend-luminosity group-hover:mix-blend-normal" />
+              <div className="absolute inset-0 bg-gradient-to-t from-slate-900 to-transparent opacity-80" />
+              <span className="relative z-10 font-bold text-white text-sm text-center tracking-wide">Prototyping</span>
+            </div>
+          </div>
+
+          {/* Bubble 3: Innovation Hub */}
+          <div className="absolute top-[25%] right-[10%] animate-float-medium pointer-events-auto" style={{ animationDelay: '0.7s' }}>
+            <div className="w-32 h-32 lg:w-40 lg:h-40 rounded-full border border-white/20 bg-slate-900/50 backdrop-blur-md shadow-[0_0_30px_rgba(139,92,246,0.2)] overflow-hidden flex items-center justify-center relative group hover:scale-110 hover:border-purple-400/50 hover:shadow-[0_0_50px_rgba(139,92,246,0.5)] transition-all duration-500 cursor-pointer">
+              <img src="https://images.unsplash.com/photo-1532094349884-543bc11b234d?auto=format&fit=crop&w=400&q=80" alt="Innovation Hub" className="absolute inset-0 w-full h-full object-cover opacity-40 group-hover:opacity-70 transition-opacity duration-500 mix-blend-luminosity group-hover:mix-blend-normal" />
+              <div className="absolute inset-0 bg-gradient-to-t from-slate-900 to-transparent opacity-80" />
+              <span className="relative z-10 font-bold text-white text-sm lg:text-base text-center tracking-wide px-2">Innovation<br/>Hub</span>
+            </div>
+          </div>
+
+          {/* Bubble 4: Custom Solutions */}
+          <div className="absolute bottom-[30%] right-[12%] animate-float-slow pointer-events-auto" style={{ animationDelay: '2.2s' }}>
+            <div className="w-24 h-24 lg:w-32 lg:h-32 rounded-full border border-white/20 bg-slate-900/50 backdrop-blur-md shadow-[0_0_30px_rgba(236,72,153,0.2)] overflow-hidden flex items-center justify-center relative group hover:scale-110 hover:border-pink-400/50 hover:shadow-[0_0_50px_rgba(236,72,153,0.5)] transition-all duration-500 cursor-pointer">
+              <img src="https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=400&q=80" alt="Custom Solutions" className="absolute inset-0 w-full h-full object-cover opacity-40 group-hover:opacity-70 transition-opacity duration-500 mix-blend-luminosity group-hover:mix-blend-normal" />
+              <div className="absolute inset-0 bg-gradient-to-t from-slate-900 to-transparent opacity-80" />
+              <span className="relative z-10 font-bold text-white text-sm text-center tracking-wide px-2">Custom<br/>Solutions</span>
+            </div>
+          </div>
+        </div>
         
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-20 text-center">
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 border border-white/10 text-slate-300 text-xs font-medium tracking-wide mb-8 backdrop-blur-md shadow-2xl">
@@ -71,6 +125,15 @@ export default function Home() {
             <a href={`https://wa.me/919008009944`} className="px-8 py-4 rounded-full bg-slate-900/50 text-white font-medium border border-slate-700/50 hover:bg-slate-800 hover:border-slate-600 backdrop-blur-md transition-all">
               Consult an Engineer
             </a>
+          </div>
+
+          {/* Mobile Text-based Offerings (Visible only on small screens where bubbles are hidden) */}
+          <div className="mt-10 flex flex-wrap justify-center gap-3 md:hidden">
+            {['SPM', 'Prototyping', 'Innovation Hub', 'Custom Solutions'].map((item) => (
+              <span key={item} className="px-3 py-1.5 rounded-full bg-white/5 border border-white/10 text-slate-300 text-xs font-medium backdrop-blur-sm">
+                {item}
+              </span>
+            ))}
           </div>
         </div>
       </section>
@@ -246,7 +309,7 @@ export default function Home() {
                     <svg key={i} className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
                   ))}
                 </div>
-                <p className="text-slate-600 text-sm leading-relaxed mb-6 font-medium">"{review.quote}"</p>
+                <p className="text-slate-600 text-sm leading-relaxed mb-6 font-medium">{review.quote}</p>
                 <div className="border-t border-slate-100 pt-4">
                   <p className="font-bold text-slate-900 text-sm">{review.author}</p>
                   <p className="text-xs text-slate-500">{review.org}</p>
